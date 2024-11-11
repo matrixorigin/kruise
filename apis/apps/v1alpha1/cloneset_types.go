@@ -28,6 +28,9 @@ const (
 	// Each pod and the pvcs it owns have the same instance-id.
 	CloneSetInstanceID = "apps.kruise.io/cloneset-instance-id"
 
+	// CloneSetForceSpecifiedDelete is the anno key that indicates the clonetset only accepts specified-delete
+	CloneSetForceSpecifiedDelete = "apps.kruise.io/force-specified-delete"
+
 	// DefaultCloneSetMaxUnavailable is the default value of maxUnavailable for CloneSet update strategy.
 	DefaultCloneSetMaxUnavailable = "20%"
 
