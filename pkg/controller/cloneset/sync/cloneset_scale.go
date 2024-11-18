@@ -133,7 +133,7 @@ func (r *realControl) Scale(
 				controllerKey, diffRes.scaleDownNum, numToDelete, len(podsSpecifiedToDelete), len(podsInPreDelete))
 			return false, nil
 		}
-		if currentCS.Annotations[appsv1alpha1.CloneSetForceSpecifiedDelete] == "true" {
+		if _, ok := currentCS.Annotations[appsv1alpha1.CloneSetForceSpecifiedDelete]; ok {
 			klog.V(3).Infof("CloneSet %s skip to scale in %d for %d to delete, because force-specified-delete is set but NO pod is specified to delete",
 				controllerKey, diffRes.scaleDownNum, numToDelete)
 			return false, nil
